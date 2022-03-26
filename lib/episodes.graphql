@@ -1,0 +1,39 @@
+# Write your query or mutation here
+query getEpisodes($page: Int!) {
+  episodes(page: $page) {
+    info {
+      count,
+    },
+    results {
+      id,
+      name,
+      air_date,
+      episode,
+      created
+      characters {
+        id,
+        name,
+        status,
+        species,
+        type,
+        gender,
+        origin{
+          id,
+          name,
+          type,
+          created,
+          dimension
+        },
+        location{
+          id,
+          name,
+          type,
+          created,
+          dimension
+        },
+        image,
+        created,
+      }
+    }
+  }
+}

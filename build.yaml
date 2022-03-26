@@ -1,0 +1,17 @@
+targets:
+  $default:
+    builders:
+      gql_build|serializer_builder:
+        generate_for:
+          - lib/episodes.graphql
+        enabled: true
+        options:
+          schema: ferry_memory_leak|lib/schema.graphql
+      ferry_generator|graphql_builder:
+        enabled: true
+        options:
+          schema: ferry_memory_leak|lib/schema.graphql
+      ferry_generator|serializer_builder:
+        enabled: true
+        options:
+          schema: ferry_memory_leak|lib/schema.graphql
